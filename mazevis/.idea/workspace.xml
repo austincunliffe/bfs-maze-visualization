@@ -20,32 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3b545044-e6af-41b9-95c8-39c91a735ece" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Graph.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MazeInterpreter.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Node.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PathFinder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mazes/SearchTestSolution" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mazes/bigMaze.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mazes/bigMazeSol.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mazes/classic.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mazes/classicSol.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mazes/demoMaze.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mazes/demoMazeSol.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mazes/mediumMaze.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mazes/mediumMazeSol.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mazes/randomMaze.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mazes/randomMazeSol.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mazes/straight.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mazes/straightSol.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mazes/tinyMaze.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mazes/tinyMazeSol.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mazes/tinyOpen.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mazes/tinyOpenSol.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mazes/turn.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mazes/turnSol.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mazes/unsolvable.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mazes/unsolvableSol.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MazeInterpreter.js" beforeDir="false" afterPath="$PROJECT_DIR$/MazeInterpreter.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,8 +49,24 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="14.5.0" />
     <property name="javascript.nodejs.core.library.typings.version" value="14.0.27" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RunManager">
+    <configuration name="MazeInterpreter.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/MazeInterpreter.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.MazeInterpreter.js" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -84,7 +76,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1596136953647</updated>
-      <workItem from="1596136954664" duration="352000" />
+      <workItem from="1596136954664" duration="8053000" />
     </task>
     <servers />
   </component>
@@ -107,5 +99,21 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="184" y="112" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1596137041408" />
+    <state width="1419" height="193" key="GridCell.Tab.0.bottom" timestamp="1596146209741">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="193" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1596146209741" />
+    <state width="1419" height="193" key="GridCell.Tab.0.center" timestamp="1596146209739">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="193" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1596146209739" />
+    <state width="1419" height="193" key="GridCell.Tab.0.left" timestamp="1596146209739">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="193" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1596146209739" />
+    <state width="1419" height="193" key="GridCell.Tab.0.right" timestamp="1596146209740">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="193" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1596146209740" />
   </component>
 </project>

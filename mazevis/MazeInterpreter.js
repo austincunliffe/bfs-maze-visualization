@@ -15,7 +15,7 @@ let testNode = new Node();
 class Graph {
     constructor(nodes, start, goal, sizeX, sizeY) {
         this.nodes = nodes;
-        this.start = start;
+        this.start = [];
         this.goal = goal;
         this.sizeX = sizeX;
         this.sizeY = sizeY;
@@ -30,55 +30,68 @@ let testGraph = new Graph();
 console.log("Hello from JS");
 
 
-
-
 let xhr = new XMLHttpRequest();
-xhr.addEventListener('load',loadData);
-xhr.open('GET',"/Users/williamrdent/bfs-maze-visualization/mazevis/mazes/bigMaze.txt");
+xhr.addEventListener('load', loadData);
+xhr.open('GET', "mazes/bigMaze.txt");
 xhr.send();
 
-function loadData(){
+function loadData() {
     console.log("load data");
     console.log(this);
+    let mazeText = this.responseText;
+    // console.log(mazeText);
+    mazeToGraph(mazeText)
 }
 
+function mazeToGraph(mazeText) {
+    let graph = new Graph();
+    let mazeLines = new Array();
+    for (let line of mazeText.split("\n")) {
+        mazeLines.push(line);
+        console.log(line);
+    }
+
+
+    let dimensions = mazeLines[0].split(" ");
+    graph.sizeX = dimensions[0];
+    graph.sizeY = dimensions[0];
+    mazeLines.splice(0, 1);
+
+    // init 2d array of nodes
+    graph.nodes = [];
+    let cols = graph.sizeX;
+    for (let i = 0; i < cols; i++) {
+        graph.nodes[i] = [];
+    }
 
 
 
+    for (let i = 0; i < graph.sizeX; i++) {
+        let currentLine = mazeLines[i];
 
+        for (let j = 0; j < graph.sizeY; j++) {
+            graph.nodes[i][j] = new Node();
+            graph.nodes[i][j].data =currentLine.charAt(j);
+            console.log(currentLine.charAt(j));
+            graph.nodes[i][j].x = i;
+            graph.nodes[i][j].y = j;
 
+            if (graph.nodes[i][j].data === 'S') {
+                graph.start.push(i);
+                graph.start.push(j);
+            }
+        }
+    }
 
+    console.log(graph.start)
+    console.log(graph.goal)
 
+    for(let i = 0; i<graph.nodes.sizeX;i++) {
+        for (let j=0; j<graph.nodes.sizeY;j++){
+            console.log(graph.nodes[i][j].data)
+        }
+    }
+        return graph;
+}
 
-// /**
-//  * Returns a Graph containing the maze read in from the scanner.
-//  *
-//  * @param fin Scanner to read input file.
-//  * @return Graph containing the file data.
-//  */
-// public static Graph buildMaze(Scanner fin) {
-//     // Store graph size x and y as ints
-//     String graphSize = fin.nextLine();
-//     String[] graphSizes = graphSize.split(" ");
-//     int x = Integer.parseInt(graphSizes[0]);
-//     int y = Integer.parseInt(graphSizes[1]);
-//
-//     // Create and fill graph with nodes containing maze characters
-//     Graph maze = new Graph(x, y);
-//     for (int i = 0; i < x; i++) {
-//         String currentLine = fin.nextLine();
-//         for (int j = 0; j < y; j++) {
-//             maze.nodes[i][j] = new Node(currentLine.charAt(j));
-//             maze.nodes[i][j].x = i;
-//             maze.nodes[i][j].y = j;
-//
-//             // Store the maze start coordinates in the graph
-//             if (maze.nodes[i][j].data == 'S') {
-//                 maze.start[0] = i;
-//                 maze.start[1] = j;
-//             }
-//         }
-//     }
-//     return maze;
-// }
 
