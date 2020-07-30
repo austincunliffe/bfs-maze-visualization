@@ -12,7 +12,6 @@ class Node {
 
 let testNode = new Node();
 
-
 class Graph {
     constructor(nodes, start, goal, sizeX, sizeY) {
         this.nodes = nodes;
@@ -22,18 +21,34 @@ class Graph {
         this.sizeY = sizeY;
     }
 
-    getStart(){
+    getStart() {
         return this.start;
     }
-
 }
 
 let testGraph = new Graph();
+console.log("Hello from JS");
 
- function buildMaze(){
-    fin = new FileReader();
-    fin.readAsArrayBuffer()
- }
+
+
+
+let xhr = new XMLHttpRequest();
+xhr.addEventListener('load',loadData);
+xhr.open('GET',"/Users/williamrdent/bfs-maze-visualization/mazevis/mazes/bigMaze.txt");
+xhr.send();
+
+function loadData(){
+    console.log("load data");
+    console.log(this);
+}
+
+
+
+
+
+
+
+
 
 // /**
 //  * Returns a Graph containing the maze read in from the scanner.
@@ -66,3 +81,4 @@ let testGraph = new Graph();
 //     }
 //     return maze;
 // }
+
