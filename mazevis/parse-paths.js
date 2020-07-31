@@ -8,7 +8,6 @@ class Node {
 async function getFile(filePath) {
     try {
         const resp = await fetch(filePath)
-        // console.log(resp.text())
         return resp.text();
     } catch (err) {
         console.log(err)
