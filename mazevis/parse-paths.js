@@ -1,22 +1,37 @@
 const fs = require('fs')
 
+class Node {
+    constructor(x, y) {
+        this.x = x;
+        this.y = y;
+    }
+}
 
 function readRowCol(filePath) {
         return fs.readFileSync(filePath).toString();
     }
 
-// TODO: Finish method by create array of nodes.
 function createNodes(dataString) {
-    for (coord of dataString.split("\n")) {
-        var coords = coord.split(" ");
-
-        console.log(coords[0], coords[1]);
+    let nodes = [];
+    for (let coord of dataString.split("\n")) {
+        let coords = coord.split(" ");
+        let node = new Node(coords[0], coords[1])
+        nodes.push(node);
     }
+    return nodes;
 }
 
-function createNodeArray(filePath) {
+ function createNodeArray(filePath) {
     let dataString = readRowCol(filePath);
-    createNodes(dataString);
+    let nodes = createNodes(dataString);
+    return nodes;
 }
 
-createNodeArray("../bfs-pathfinder/search-coordinates/classicCoords.txt");
+let classicSearchCoords = createNodeArray("../bfs-pathfinder/search-coordinates/classicCoords.txt");
+let classicShortestCoords = createNodeArray("../bfs-pathfinder/shortest-paths/classic.txt");
+
+for (let node of classicSearchCoords) {
+    console.log(node.x + " " + node.y);
+}
+
+
