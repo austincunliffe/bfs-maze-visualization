@@ -1,5 +1,3 @@
-const fs = require('fs')
-
 class Node {
     constructor(x, y) {
         this.x = x;
@@ -7,9 +5,15 @@ class Node {
     }
 }
 
-function readRowCol(filePath) {
-        return fs.readFileSync(filePath).toString();
+async function getFile(filePath) {
+    try {
+        const resp = await fetch(filePath)
+        // console.log(resp.text())
+        return resp.text();
+    } catch (err) {
+        console.log(err)
     }
+}
 
 function createNodes(dataString) {
     let nodes = [];
@@ -21,15 +25,8 @@ function createNodes(dataString) {
     return nodes;
 }
 
-function createNodeArray(filePath) {
-    let dataString = readRowCol(filePath);
-    let nodes = createNodes(dataString);
+export async function createNodeArray(filePath) {
+    const dataString = await getFile(filePath);
+    const nodes = createNodes(dataString);
     return nodes;
-}
-
-let classicSearchCoords = createNodeArray("../bfs-pathfinder/search-coordinates/classicCoords.txt");
-let classicShortestCoords = createNodeArray("../bfs-pathfinder/shortest-paths/classic.txt");
-
-for (let node of classicSearchCoords) {
-    console.log(node.x + " " + node.y);
 }
