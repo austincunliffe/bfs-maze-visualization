@@ -1,3 +1,5 @@
+// import {createNodeArray} from "./parse-paths.js";
+// createNodeArray("../bfs-pathfinder/search-coordinates/classicCoords.txt");
 class Node {
     constructor(data, x, y, visited, cameFrom, isPath) {
         this.data = data;
@@ -34,6 +36,7 @@ function loadData() {
     let mazeText = this.responseText;
     console.log(mazeText);
     let graph = mazeToGraph(mazeText);
+    console.log(graph.start)
     let mazeData = gridData(graph);
     gridVis(mazeData);
 }
@@ -163,9 +166,53 @@ function gridVis(gridData) {
             }
         })
         .style("stroke", "#222")
-
-
-    console.log();
 }
 
 
+
+
+
+// const fs = require('fs');
+//
+// class NodeA {
+//     constructor(x, y) {
+//         this.x = x;
+//         this.y = y;
+//     }
+// }
+//
+// function ajaxRequest(filePath) {
+//     let xhr = new XMLHttpRequest();
+//     xhr.addEventListener('load', readRowCol);
+//     xhr.open('GET', filePath.toString());
+//     xhr.send();
+// }
+//
+// function readRowCol(filePath) {
+//     // return fs.readFileSync(filePath).toString();
+//     return this.responseText;
+// }
+//
+// function createNodes(dataString) {
+//     let nodes = [];
+//     for (let coord of dataString.split("\n")) {
+//         let coords = coord.split(" ");
+//         let node = new NodeA(coords[0], coords[1])
+//         nodes.push(node);
+//     }
+//     return nodes;
+// }
+//
+// function createNodeArray(filePath) {
+//     // let dataString = readRowCol(filePath);
+//     let dataString = ajaxRequest(filePath);
+//     let nodes = createNodes(dataString);
+//     return nodes;
+// }
+//
+// let classicSearchCoords = createNodeArray("../bfs-pathfinder/search-coordinates/classicCoords.txt");
+// let classicShortestCoords = createNodeArray("../bfs-pathfinder/shortest-paths/classic.txt");
+//
+// for (let node of classicSearchCoords) {
+//     console.log(node.x + " " + node.y);
+// }

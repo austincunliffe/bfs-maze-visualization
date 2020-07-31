@@ -21,7 +21,7 @@ function createNodes(dataString) {
     return nodes;
 }
 
- function createNodeArray(filePath) {
+function createNodeArray(filePath) {
     let dataString = readRowCol(filePath);
     let nodes = createNodes(dataString);
     return nodes;
@@ -33,5 +33,3 @@ let classicShortestCoords = createNodeArray("../bfs-pathfinder/shortest-paths/cl
 for (let node of classicSearchCoords) {
     console.log(node.x + " " + node.y);
 }
-
-
