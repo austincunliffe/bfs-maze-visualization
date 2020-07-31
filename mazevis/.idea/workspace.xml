@@ -20,8 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3b545044-e6af-41b9-95c8-39c91a735ece" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/mazevis.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/mazevis.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Graph.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/MazeInterpreter.js" beforeDir="false" afterPath="$PROJECT_DIR$/MazeInterpreter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Node.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PathFinder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bigMaze.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +83,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1596136953647</updated>
-      <workItem from="1596136954664" duration="8053000" />
+      <workItem from="1596136954664" duration="18922000" />
     </task>
     <servers />
   </component>
