@@ -11,7 +11,6 @@ class Node {
     }
 }
 
-
 class Graph {
     constructor(nodes, start, goal, sizeX, sizeY) {
         this.nodes = nodes;
@@ -26,7 +25,6 @@ class Graph {
     }
 }
 
-
 let xhr = new XMLHttpRequest();
 xhr.addEventListener('load', loadData);
 xhr.open('GET', "mazes/bigMaze.txt");
@@ -39,8 +37,22 @@ async function loadData() {
     console.log(graph.start)
     let mazeData = gridData(graph);
     gridVis(mazeData);
+
     let searchArr = await createNodeArray("search-coordinates/bigMazeCoords.txt");
     let shortestArr = await createNodeArray("shortest-paths/bigMaze.txt");
+
+    // The loop through searchArr "animates" the breadth first search.
+    for (let node of searchArr) {
+        var id = "#y" + node.y + "x" + node.x;
+        d3.select(id).style('fill', "red");
+        await sleep(20);
+    }
+
+    // The loop through shortestArr highlights the shortest path available.
+    for (let node of shortestArr) {
+        var id = "#y" + node.y + "x" + node.x;
+        d3.select(id).style('fill', "green");
+    }
 }
 
 function mazeToGraph(mazeText) {
@@ -51,10 +63,9 @@ function mazeToGraph(mazeText) {
         // console.log(line);
     }
 
-
     let dimensions = mazeLines[0].split(" ");
     graph.sizeX = dimensions[0];
-    graph.sizeY = dimensions[0];
+    graph.sizeY = dimensions[1];
     mazeLines.splice(0, 1);
 
     // init 2d array of nodes
@@ -85,7 +96,6 @@ function mazeToGraph(mazeText) {
         }
     }
 
-
     for (let i = 0; i < graph.nodes.sizeX; i++) {
         for (let j = 0; j < graph.nodes.sizeY; j++) {
             // console.log(graph.nodes[i][j].data)
@@ -110,6 +120,8 @@ function gridData(graph) {
 
         for (var column = 0; column < graph.sizeY; column++) {
             data[row].push({
+                yCoord: row,
+                xCoord: column,
                 x: xpos,
                 y: ypos,
                 cellType: graph.nodes[row][column].data,
@@ -156,6 +168,9 @@ function gridVis(gridData) {
         .attr("cellType", function (d) {
             return d.cellType;
         })
+        .attr("id", function (d) {
+            return "y" + d.yCoord + "x" + d.xCoord;
+        })
         .style("fill", function (d) {
             if (d.cellType == 'X') {
                 return "#000";
@@ -168,4 +183,8 @@ function gridVis(gridData) {
             }
         })
         .style("stroke", "#222")
+}
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
 }
