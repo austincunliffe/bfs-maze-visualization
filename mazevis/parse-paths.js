@@ -18,7 +18,7 @@ function createNodes(dataString) {
     let nodes = [];
     for (let coord of dataString.split("\n")) {
         let coords = coord.split(" ");
-        let node = new Node(coords[0], coords[1])
+        let node = new Node(coords[1], coords[0])
         nodes.push(node);
     }
     return nodes;
