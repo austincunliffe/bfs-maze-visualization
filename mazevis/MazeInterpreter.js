@@ -185,3 +185,6 @@ function gridVis(gridData) {
         .style("stroke", "#222")
 }
 
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
