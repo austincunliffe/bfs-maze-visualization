@@ -168,51 +168,53 @@ function gridVis(gridData) {
         .style("stroke", "#222")
 }
 
+grid.select(row)
 
 
 
 
-// const fs = require('fs');
-//
-// class NodeA {
-//     constructor(x, y) {
-//         this.x = x;
-//         this.y = y;
-//     }
-// }
-//
-// function ajaxRequest(filePath) {
-//     let xhr = new XMLHttpRequest();
-//     xhr.addEventListener('load', readRowCol);
-//     xhr.open('GET', filePath.toString());
-//     xhr.send();
-// }
-//
-// function readRowCol(filePath) {
-//     // return fs.readFileSync(filePath).toString();
-//     return this.responseText;
-// }
-//
-// function createNodes(dataString) {
-//     let nodes = [];
-//     for (let coord of dataString.split("\n")) {
-//         let coords = coord.split(" ");
-//         let node = new NodeA(coords[0], coords[1])
-//         nodes.push(node);
-//     }
-//     return nodes;
-// }
-//
-// function createNodeArray(filePath) {
-//     // let dataString = readRowCol(filePath);
-//     let dataString = ajaxRequest(filePath);
-//     let nodes = createNodes(dataString);
-//     return nodes;
-// }
-//
-// let classicSearchCoords = createNodeArray("../bfs-pathfinder/search-coordinates/classicCoords.txt");
-// let classicShortestCoords = createNodeArray("../bfs-pathfinder/shortest-paths/classic.txt");
-//
-// for (let node of classicSearchCoords) {
-//     console.log(node.x + " " + node.y);
-// }
+
+const fs = require('fs');
+
+class NodeA {
+    constructor(x, y) {
+        this.x = x;
+        this.y = y;
+    }
+}
+
+function ajaxRequest(filePath) {
+    let xhr = new XMLHttpRequest();
+    xhr.addEventListener('load', readRowCol);
+    xhr.open('GET', filePath.toString());
+    xhr.send();
+}
+
+function readRowCol(filePath) {
+    // return fs.readFileSync(filePath).toString();
+    return this.responseText;
+}
+
+function createNodes(dataString) {
+    let nodes = [];
+    for (let coord of dataString.split("\n")) {
+        let coords = coord.split(" ");
+        let node = new NodeA(coords[0], coords[1])
+        nodes.push(node);
+    }
+    return nodes;
+}
+
+function createNodeArray(filePath) {
+    // let dataString = readRowCol(filePath);
+    let dataString = ajaxRequest(filePath);
+    let nodes = createNodes(dataString);
+    return nodes;
+}
+
+let classicSearchCoords = createNodeArray("../bfs-pathfinder/search-coordinates/classicCoords.txt");
+let classicShortestCoords = createNodeArray("../bfs-pathfinder/shortest-paths/classic.txt");
+
+for (let node of classicSearchCoords) {
+    console.log(node.x + " " + node.y);
+}
