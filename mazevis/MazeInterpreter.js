@@ -19,10 +19,6 @@ class Graph {
         this.sizeX = sizeX;
         this.sizeY = sizeY;
     }
-
-    getStart() {
-        return this.start;
-    }
 }
 
 let xhr = new XMLHttpRequest();
@@ -60,7 +56,6 @@ function mazeToGraph(mazeText) {
     let mazeLines = new Array();
     for (let line of mazeText.split("\n")) {
         mazeLines.push(line);
-        // console.log(line);
     }
 
     let dimensions = mazeLines[0].split(" ");
@@ -81,7 +76,6 @@ function mazeToGraph(mazeText) {
         for (let j = 0; j < graph.sizeY; j++) {
             graph.nodes[i][j] = new Node();
             graph.nodes[i][j].data = currentLine.charAt(j);
-            // console.log(currentLine.charAt(j));
             graph.nodes[i][j].x = i;
             graph.nodes[i][j].y = j;
 
@@ -95,19 +89,13 @@ function mazeToGraph(mazeText) {
             }
         }
     }
-
-    for (let i = 0; i < graph.nodes.sizeX; i++) {
-        for (let j = 0; j < graph.nodes.sizeY; j++) {
-            // console.log(graph.nodes[i][j].data)
-        }
-    }
     return graph;
 }
 
 
 function gridData(graph) {
     var data = new Array();
-    var xpos = 1; //starting xpos and ypos at 1 so the stroke will show when we make the grid below
+    var xpos = 1;
     var ypos = 1;
     var width = 20;
     var height = 20;
