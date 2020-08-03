@@ -21,21 +21,29 @@ class Graph {
     }
 }
 
-let xhr = new XMLHttpRequest();
-xhr.addEventListener('load', loadData);
-xhr.open('GET', "mazes/bigMaze.txt");
-xhr.send();
+let searchCoordsURL = "search-coordinates/";
+let shortestPathURL = "shortest-paths/";
+
+const fileSelector = document.getElementById('file-selector');
+fileSelector.addEventListener('change', (event) => {
+    const fileList = event.target.files;
+    let xhr = new XMLHttpRequest();
+    xhr.addEventListener('load', loadData);
+    let unsolvedMazeURL = "mazes/"+fileList[0].name;
+    searchCoordsURL+= fileList[0].name;
+    shortestPathURL += fileList[0].name;
+    xhr.open('GET', unsolvedMazeURL);
+    xhr.send();
+});
 
 async function loadData() {
     let mazeText = this.responseText;
-    console.log(mazeText);
     let graph = mazeToGraph(mazeText);
-    console.log(graph.start)
     let mazeData = gridData(graph);
     gridVis(mazeData);
 
-    let searchArr = await createNodeArray("search-coordinates/bigMazeCoords.txt");
-    let shortestArr = await createNodeArray("shortest-paths/bigMaze.txt");
+    let searchArr = await createNodeArray(searchCoordsURL);
+    let shortestArr = await createNodeArray(shortestPathURL);
 
     // The loop through searchArr "animates" the breadth first search.
     for (let node of searchArr) {
@@ -100,9 +108,6 @@ function gridData(graph) {
     var width = 20;
     var height = 20;
 
-    console.log(graph.sizeX)
-    console.log(graph.sizeY)
-
     for (var row = 0; row < graph.sizeX; row++) {
         data.push(new Array());
 
@@ -123,6 +128,7 @@ function gridData(graph) {
     }
     return data;
 }
+
 
 function gridVis(gridData) {
     var grid = d3.select("#grid")
